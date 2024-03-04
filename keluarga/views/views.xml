@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Tree View -->
+        <record id="keluarga_view_tree" model="ir.ui.view">
+            <field name="name">keluarga.tree</field>
+            <field name="model">keluarga</field>
+            <field name="arch" type="xml">
+                <tree string="Keluarga Tree">
+                    <field name="name"/>
+                    <field name="relation"/>
+                    <field name="birthday"/>
+                    <field name="sex"/>
+                    <field name="marital"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="keluarga_view_form" model="ir.ui.view">
+          <field name="name">keluarga.form</field>
+          <field name="model">keluarga</field>
+          <field name="arch" type="xml">
+              <form string="Data Keluarga">
+                  <sheet>
+                      <group>
+                        <field name="name"/>
+                        <field name="relation"/>
+                        <field name="birthday"/>
+                        <field name="sex"/>
+                        <field name="marital"/>
+                      </group>
+                  </sheet>
+              </form>
+          </field>
+      </record>
+
+        <!-- Action for the Tree View -->
+        <record id="action_keluarga_tree" model="ir.actions.act_window">
+            <field name="name">Keluarga</field>
+            <field name="res_model">keluarga</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Menu for the Tree View -->
+        <menuitem id="menu_keluarga" name="Keluarga" />
+        <menuitem id="menu_keluarga_tree" name="Keluarga Tree" parent="menu_keluarga" action="action_keluarga_tree"/>
+    </data>
+</odoo>
